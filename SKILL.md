@@ -1,5 +1,5 @@
 ---
-name: ato-skill-governance
+name: ato-ai-skill-governance
 description: Skill de gobernanza para diseñar, revisar y evolucionar skills de IA, reglas de planificación, políticas de runtime, semántica de activación, estrategia de memoria, uso de herramientas, preparación para la automatización, orquestación, RAG, bases de datos vectoriales, comportamiento multiagente y sistemas de IA gobernables por personas. Úsala antes de planificar la implementación cuando el trabajo pueda ampliar la arquitectura, el comportamiento en runtime, el estado oculto, las herramientas, la automatización o la complejidad operativa. Úsala al revisar AGENTS.md como referencia operativa local del proyecto, no como dependencia necesaria de la skill.
 ---
 
