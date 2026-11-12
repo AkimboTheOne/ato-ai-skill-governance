@@ -12,4 +12,4 @@ Las referencias deben ser:
 
 No agregues grandes corpus de referencia, volcados generados, memoria oculta, contenido orientado a RAG ni infraestructura de recuperación salvo que exista una necesidad operativa explícita y documentada.
 
-Es válido que no haya referencias adicionales. Este directorio es un punto de extensión gobernado, no una invitación a acumular material.
+Las cinco referencias operativas están enlazadas desde `SKILL.md` y se consultan según la tarea. Añade otras referencias solo si tienen una necesidad concreta.

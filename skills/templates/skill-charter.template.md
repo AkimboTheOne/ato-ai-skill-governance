@@ -16,9 +16,17 @@ Una skill debe ser:
 
 # Identidad de la skill
 
-## Nombre de la skill
+## Nombre técnico
 
 `<skill-name>`
+
+Debe coincidir con `name` en `SKILL.md` y con el directorio de la skill.
+
+## Nombre descriptivo
+
+`<nombre legible para personas>`
+
+Debe reflejar el propósito de la skill y ser coherente con su nombre técnico y el título de `SKILL.md`. Si la plataforma objetivo define un campo de nombre visible, mantenlo coherente; en Codex, ese campo puede ser `interface.display_name` en `agents/openai.yaml`.
 
 ---
 

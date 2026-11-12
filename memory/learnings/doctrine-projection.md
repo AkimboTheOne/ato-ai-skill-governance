@@ -2,7 +2,7 @@
 
 ## Aprendizaje
 
-Una skill debe tener una doctrina compartida. Los artefactos operativos, como `SKILL.md`, `AGENTS.md`, las reglas de planificación, la política de runtime, la política de activación, la política de memoria y las listas de revisión, son proyecciones de esa doctrina adaptadas a cada contexto.
+Una skill debe tener una doctrina compartida. Sus artefactos operativos —como `SKILL.md`, referencias temáticas, políticas de memoria y, cuando existan, archivos locales de instrucciones o adaptadores de plataforma— proyectan esa doctrina para sus contextos de uso. La forma concreta depende de la arquitectura de la skill; no se requieren archivos YAML ni listas de revisión separados.
 
 Pueden especializar la aplicación de la doctrina en un contexto, pero no deben introducir doctrinas en competencia ni requerir reglas de precedencia para resolver conflictos doctrinales.
 

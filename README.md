@@ -1,6 +1,6 @@
 # ATO Skill Governance
 
-Repositorio base para la gobernanza de skills de IA, las restricciones de planificación, las políticas de runtime y los principios de gobernanza cognitiva.
+Repositorio base para la gobernanza de skills de IA, independiente del agente que las interprete. Codex es la primera implementación; sus archivos de interfaz son adaptadores, no parte de la doctrina portable.
 
 ---
 
@@ -100,13 +100,8 @@ ato-skill-governance/
 ├── AGENTS.md
 ├── skill-charter.md
 │
-├── governance/
-│   ├── planner-rules.yaml
-│   ├── runtime-policy.yaml
-│   └── activation-policy.yaml
-│
-├── reviews/
-│   └── checklist.md
+├── agents/                 # Adaptación de interfaz para Codex/OpenAI
+│   └── openai.yaml
 │
 ├── skills/
 │   └── templates/
@@ -118,12 +113,16 @@ ato-skill-governance/
 │       └── doctrine-projection.md
 │
 └── references/
-    └── README.md
+    ├── question.md
+    ├── eliminate.md
+    ├── simplify.md
+    ├── accelerate.md
+    └── automate.md
 ```
 
 La estructura debe seguir siendo pequeña hasta que nuevos artefactos justifiquen su existencia.
 
-Se evitan deliberadamente duplicados en la raíz como `planner-rules.yaml`, `runtime-policy.yaml` o `checklist.md`. Las rutas canónicas son los subdirectorios gobernados que se muestran arriba.
+Las referencias por categoría son la fuente principal del detalle operativo; se consultan según la tarea.
 
 ---
 
@@ -131,14 +130,16 @@ Se evitan deliberadamente duplicados en la raíz como `planner-rules.yaml`, `run
 
 | Artefacto | Propósito |
 |---|---|
-| [SKILL.md](SKILL.md) | Define la identidad operativa, el contrato de activación y los límites de esta skill. |
+| [SKILL.md](SKILL.md) | Punto de entrada portable: identidad operativa, activación y límites. |
 | [FOUNDATION.md](FOUNDATION.md) | Define la doctrina de ingeniería reutilizable. |
 | [AGENTS.md](AGENTS.md) | Define las restricciones operativas para agentes. |
 | [skill-charter.md](skill-charter.md) | Define el charter concreto de la skill de este repositorio. |
-| [governance/planner-rules.yaml](governance/planner-rules.yaml) | Define heurísticas de planificación y gobernanza de complejidad. |
-| [governance/runtime-policy.yaml](governance/runtime-policy.yaml) | Define los límites de ejecución en runtime. |
-| [governance/activation-policy.yaml](governance/activation-policy.yaml) | Define cuándo y cómo se activa la gobernanza. |
-| [reviews/checklist.md](reviews/checklist.md) | Define criterios de revisión antes de implementar o automatizar. |
+| [agents/openai.yaml](agents/openai.yaml) | Adaptador opcional para nombre, descripción breve e invocación implícita en Codex/OpenAI. No define políticas universales para otros agentes. |
+| [Preguntar](references/question.md) | Requisitos, identidad, activación y riesgo. |
+| [Eliminar](references/eliminate.md) | Eliminación e integración de complejidad innecesaria. |
+| [Simplificar](references/simplify.md) | Diseño explícito, instrucciones, herramientas y memoria. |
+| [Acelerar](references/accelerate.md) | Estabilidad y optimización proporcionada. |
+| [Automatizar](references/automate.md) | Condiciones de automatización y límites de ejecución. |
 | [skills/templates/skill-charter.template.md](skills/templates/skill-charter.template.md) | Define el charter estándar para futuras skills. |
 | [memory/README.md](memory/README.md) | Define límites y precedencia de memoria, y el manejo de propuestas de promoción doctrinal. |
 | [references/README.md](references/README.md) | Define cómo agregar referencias estables sin crear contexto descontrolado. |
@@ -147,19 +148,19 @@ Se evitan deliberadamente duplicados en la raíz como `planner-rules.yaml`, `run
 
 ## Relaciones entre artefactos
 
-`FOUNDATION.md` define la doctrina compartida. `SKILL.md`, `governance/*.yaml`, `reviews/checklist.md` y `memory/README.md` son proyecciones contextuales de esa doctrina. No deben introducir doctrinas en competencia.
+`FOUNDATION.md` define la doctrina compartida. `SKILL.md`, las referencias por categoría y `memory/README.md` son proyecciones contextuales de esa doctrina. No deben introducir doctrinas en competencia.
 
-`SKILL.md` es el punto de entrada operativo para Codex. Define cómo se usa la skill, cuándo se activa y qué límites preserva. Debe ser conciso y delegar los detalles a los artefactos canónicos.
+`SKILL.md` es el punto de entrada portable para cualquier agente compatible con skills. Define cómo se usa la skill, cuándo se activa y qué límites preserva. Debe ser conciso y delegar los detalles a los artefactos canónicos.
+
+Codex es la primera implementación. `agents/openai.yaml` configura su interfaz e invocación implícita; un agente diferente puede requerir otro adaptador o mecanismo de descubrimiento. Ningún adaptador altera la doctrina compartida ni garantiza por sí solo su cumplimiento.
 
 `AGENTS.md` define la referencia operativa local del repositorio. Gobierna el mantenimiento y las restricciones de uso específicas del proyecto, sin ser un requisito para interpretar `SKILL.md`.
 
-`SKILL.md` y `AGENTS.md` comparten la misma base, pero cumplen funciones distintas. `SKILL.md` permanece autocontenido como interfaz de la skill; `AGENTS.md` sigue siendo la referencia local autoritativa del proyecto.
+`SKILL.md` y `AGENTS.md` comparten la misma base, pero cumplen funciones distintas. `SKILL.md` es la interfaz portable de la skill; `AGENTS.md` es la referencia local de este repositorio y no se presupone disponible para otros agentes.
 
 `skill-charter.md` define el charter concreto de la skill de este repositorio.
 
-Los archivos de `governance/` definen las políticas de planificación, runtime y activación derivadas de la doctrina compartida.
-
-Los directorios `reviews/`, `skills/templates/`, `memory/` y `references/` respaldan la revisión, la creación futura de skills, los límites de memoria, la precedencia, la promoción doctrinal y las referencias gobernadas.
+Las referencias por categoría reúnen las instrucciones de planificación, revisión, activación y runtime. `skills/templates/` y `memory/` respaldan charters, límites de memoria, precedencia y promoción doctrinal.
 
 ---
 
