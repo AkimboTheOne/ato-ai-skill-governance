@@ -16,9 +16,17 @@ Una skill debe ser:
 
 # Identidad de la skill
 
-## Nombre de la skill
+## Nombre técnico
 
 `<skill-name>`
+
+Debe coincidir con `name` en `SKILL.md` y con el directorio de la skill.
+
+## Nombre descriptivo
+
+`<nombre legible para personas>`
+
+Debe reflejar el propósito de la skill y ser coherente con su nombre técnico y el título de `SKILL.md`. Si la plataforma objetivo define un campo de nombre visible, mantenlo coherente; en Codex, ese campo puede ser `interface.display_name` en `agents/openai.yaml`.
 
 ---
 
@@ -199,6 +207,10 @@ Prefiere memoria local y legible por personas.
 ---
 
 # Gobernanza humana
+
+El agente ejerce control delegado: puede analizar, recomendar y elegir medios dentro del objetivo, alcance y permisos recibidos. No tiene autoridad humana ni puede ampliar la autorización o tratar una recomendación como aprobación. La persona conserva la decisión final y la capacidad de anulación.
+
+El agente ejecuta acciones ya autorizadas dentro del alcance sin pedir aprobación repetida. Aclara los límites ambiguos y aplaza acciones que excedan el alcance o requieran autorización o revisión humana según las políticas aplicables.
 
 Los operadores humanos deben conservar:
 

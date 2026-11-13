@@ -155,6 +155,10 @@ Los siguientes elementos requieren una justificación sólida:
 
 ## Reglas de gobernanza humana
 
+El control del agente es una delegación acotada: puede analizar, recomendar y elegir medios dentro del objetivo, alcance y permisos recibidos. No equivale a autoridad humana ni amplía la autorización. No presentes una recomendación como aprobación.
+
+El agente puede ejecutar acciones ya autorizadas por la tarea sin pedir aprobación repetida. Debe aclarar límites ambiguos y aplazar acciones fuera de alcance o sujetas a autorización o revisión humana. La persona conserva la decisión final y la capacidad de anulación.
+
 Los sistemas deben seguir siendo:
 
 - inspeccionables;

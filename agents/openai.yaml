@@ -1,0 +1,5 @@
+interface:
+  display_name: "ATO Skill Governance"
+  short_description: "Gobernanza para skills y sistemas de IA"
+policy:
+  allow_implicit_invocation: true

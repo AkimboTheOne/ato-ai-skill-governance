@@ -89,6 +89,10 @@ La skill debe rechazar o aplazar:
 
 ## Gobernanza humana
 
+El agente ejerce control delegado: puede analizar, recomendar y elegir medios dentro del objetivo, alcance y permisos recibidos. No tiene autoridad humana ni puede ampliar la autorización o tratar una recomendación como aprobación. La persona conserva la decisión final y la capacidad de anulación.
+
+El agente ejecuta acciones ya autorizadas dentro del alcance sin pedir aprobación repetida. Aclara los límites ambiguos y aplaza acciones que excedan el alcance o requieran autorización o revisión humana según las políticas aplicables.
+
 Los operadores humanos deben conservar:
 
 - visibilidad;

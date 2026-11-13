@@ -60,7 +60,7 @@ No debe incorporarse al repositorio canónico de la skill salvo que se convierta
 
 ### Memoria global del usuario
 
-La memoria global del usuario pertenece al entorno Codex del usuario, no a este repositorio ni a un repositorio consumidor.
+La memoria global del usuario pertenece al entorno del agente o producto que consume la skill, no a este repositorio ni a un repositorio consumidor. En Codex corresponde a la memoria global del usuario de Codex.
 
 Registra preferencias y contexto generales que no corresponden a un repositorio, organización o instancia de la skill concretos.
 
@@ -82,10 +82,10 @@ No debe prevalecer sobre la memoria local de instalación del repositorio activo
 
 ## Precedencia de memoria
 
-Al aplicar esta skill en un repositorio, se debe leer la memoria en este orden:
+Cuando la plataforma disponga de estas capas de memoria, al aplicar esta skill en un repositorio se debe leer la memoria en este orden:
 
 1. **Memoria local de instalación del repositorio**, en `.ato-skill-governance/`.
-2. **Memoria global del usuario**, en el entorno Codex del usuario.
+2. **Memoria global del usuario**, en el entorno del agente que consume la skill (por ejemplo, Codex).
 3. **Memoria canónica de la skill**, en `memory/`.
 
 La memoria local de instalación del repositorio tiene prioridad para las decisiones sobre el repositorio activo.
@@ -146,6 +146,8 @@ Un aprendizaje de una instalación local puede promoverse a la memoria canónica
 La promoción debe ser explícita.
 
 No incorpores contexto local a la skill de forma silenciosa.
+
+El agente puede detectar aprendizajes, evaluar su generalización y preparar una recomendación o borrador dentro de la tarea autorizada. No tiene autoridad para aprobar ni aplicar la promoción por sí mismo; la aprobación humana explícita es necesaria antes de modificar la memoria canónica.
 
 ---
 

@@ -2,16 +2,16 @@
 
 ## Aprendizaje
 
-Las primitivas operativas que definen el comportamiento mecánico de una skill deben permanecer dentro de su `SKILL.md`, salvo que exista un caso concreto de reutilización externa o un límite de mantenimiento independiente que justifique extraerlas.
+El `SKILL.md` debe conservar las primitivas esenciales que orientan el comportamiento y permiten usar la skill sin cargar todas sus referencias. Los procedimientos y detalles extensos pueden distribuirse en referencias enfocadas cuando mejoren la claridad y la carga progresiva; cada referencia debe estar enlazada desde el punto de entrada y leerse solo cuando sea pertinente.
 
-Así, la doctrina y el comportamiento se mantienen alineados, se evita una segunda capa de autoridad y se reduce la desviación entre las reglas declaradas y el modelo real de ejecución.
+Esta distribución mantiene la doctrina y el comportamiento alineados sin convertir las referencias en autoridades independientes: `SKILL.md` conserva el flujo esencial, los límites compartidos y las condiciones de navegación; las referencias desarrollan instrucciones específicas sin duplicarlas.
 
 ## Evidencia
 
-Este aprendizaje surgió al definir `ato-skill-governance`. Un artefacto separado para las 10 acciones operativas no era necesario una vez que estas se expresaron como doctrina interna con una forma de ejecución fija.
+Este aprendizaje se precisó al reorganizar `ato-skill-governance`: el punto de entrada debe conservar las cinco primitivas del circuito, mientras los detalles de cada una se cargan desde referencias por categoría cuando la tarea lo requiere.
 
 ## Notas de gobernanza
 
 - Compatible con el orden requerido: Preguntar (Question), Eliminar (Eliminate), Simplificar (Simplify), Acelerar (Accelerate) y Automatizar (Automate).
 - Reduce duplicación sin añadir comportamiento en runtime, estado oculto ni orquestación.
-- Solo aplica cuando el objetivo es un comportamiento operativo reutilizable, no un catálogo de documentación.
+- Divide instrucciones solo cuando haya una necesidad concreta; evita referencias vacías, duplicación y capas de navegación innecesarias.
