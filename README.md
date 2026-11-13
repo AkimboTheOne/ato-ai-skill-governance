@@ -48,6 +48,14 @@ Solo se debería incorporar código si el modelo operativo basado en documentaci
 
 ---
 
+## Versión y compatibilidad
+
+La versión actual de desarrollo es **0.1.0**, declarada en [`VERSION`](VERSION). El proyecto adopta [Semantic Versioning 2.0.0](https://semver.org/): la serie `0.y.z` indica desarrollo inicial y el contrato público aún puede cambiar sin garantía de compatibilidad.
+
+La versión `1.0.0` se declarará cuando el contrato de gobernanza sea suficientemente estable y sus criterios principales tengan validación adecuada. Las etiquetas Git de versión deben usar el prefijo `v` y apuntar a commits integrados que correspondan al contenido de `VERSION`.
+
+---
+
 ## Doctrina central
 
 > No automatices, distribuyas, abstraigas, optimices ni orquestes algo que antes no se haya cuestionado, eliminado, simplificado y comprendido.
