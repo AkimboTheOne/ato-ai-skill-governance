@@ -2,7 +2,7 @@
 
 Tras eliminar lo innecesario, favorece comportamiento explícito, contratos claros, razonamiento local, flujos deterministas y estado legible por personas. Prefiere modularidad monolítica, Markdown, memoria local, interfaces sencillas y herramientas directas cuando resuelvan el problema. Evita magia, indirección excesiva, distribución prematura y abstracciones que oculten la operación.
 
-Comprueba que la solución sea proporcional al problema, mantenible bajo presión y comprensible, observable y auditable por personas. Mantén visibles decisiones, entradas, salidas y efectos secundarios; conserva control y capacidad de anulación humana. Evalúa costo operativo y carga cognitiva, no sofisticación.
+Comprueba que la solución sea proporcional al problema, mantenible bajo presión y comprensible, observable y auditable por personas. Mantén visibles decisiones, entradas, salidas y efectos secundarios; conserva control y capacidad de anulación humana. El agente decide medios dentro del alcance delegado, mientras la persona retiene autoridad final y aprobaciones reservadas. No conviertas una recomendación en aprobación ni amplíes permisos. Evalúa costo operativo y carga cognitiva, no sofisticación.
 
 ## Distribución de instrucciones
 

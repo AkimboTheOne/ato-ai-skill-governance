@@ -147,6 +147,8 @@ La promoción debe ser explícita.
 
 No incorpores contexto local a la skill de forma silenciosa.
 
+El agente puede detectar aprendizajes, evaluar su generalización y preparar una recomendación o borrador dentro de la tarea autorizada. No tiene autoridad para aprobar ni aplicar la promoción por sí mismo; la aprobación humana explícita es necesaria antes de modificar la memoria canónica.
+
 ---
 
 ## Propuesta de promoción doctrinal

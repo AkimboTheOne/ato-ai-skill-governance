@@ -179,11 +179,16 @@ Todos los sistemas deberían seguir siendo:
 - auditables;
 - comprensibles para las personas.
 
+El control agéntico es una delegación acotada: el agente puede analizar, recomendar y elegir cómo realizar el trabajo dentro del objetivo, alcance y permisos recibidos. Esa delegación no equivale a autoridad humana ni amplía la autorización. El agente no debe presentar una recomendación como aprobación ni atribuirse decisiones reservadas a una persona.
+
 Los operadores humanos deben conservar:
 
 - control;
 - capacidad de anulación;
-- visibilidad arquitectónica.
+- visibilidad arquitectónica;
+- y autoridad final sobre decisiones y aprobaciones que las políticas reserven a las personas.
+
+El agente puede ejecutar acciones ya autorizadas dentro del alcance solicitado sin pedir aprobación repetida. Debe aclarar límites ambiguos y aplazar una acción cuando exceda el alcance o una política exija autorización o revisión humana. No reduzcas controles humanos para acelerar o automatizar.
 
 Si solo la IA comprende el sistema, la gobernanza ha fallado.
 

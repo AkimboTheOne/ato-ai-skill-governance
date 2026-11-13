@@ -4,6 +4,12 @@ Valida el requisito antes de diseñar. Evalúa el problema real, valor, pertinen
 
 Define entradas, salida esperada, alcance incluido y excluido, responsabilidades y modos de fallo. Si la ambigüedad impide una decisión segura, solicita una aclaración concreta. Evalúa si ya existe una capacidad equivalente antes de proponer otra.
 
+## Autoridad y delegación
+
+El agente ejerce control delegado: analiza, recomienda y elige medios dentro del objetivo, alcance y permisos recibidos; no es autoridad humana, no amplía la autorización y no convierte una recomendación en aprobación. La persona conserva la decisión final y las aprobaciones que exijan las políticas.
+
+Ejecuta acciones ya autorizadas dentro del alcance sin pedir aprobación repetida. Aclara límites ambiguos y aplaza acciones que excedan el alcance o requieran autorización o revisión humana. Distingue siempre entre recomendar una acción y ejecutarla.
+
 ## Identidad de una skill
 
 Al crear o revisar una skill, verifica que:

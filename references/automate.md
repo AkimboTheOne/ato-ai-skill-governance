@@ -2,6 +2,8 @@
 
 La opción predeterminada es la ejecución manual o asistida. Automatiza solo después de cuestionar, eliminar y simplificar, y cuando el proceso sea estable, tenga responsable, entradas claras, salidas verificables, modos de fallo conocidos, límites, trazabilidad, supervisión y capacidad de anulación humana. Si la automatización modifica estado, exige que sea posible revertir esos cambios; para operaciones genuinamente de solo lectura no hay cambios que revertir. Para una acción puntual no automatizada que no sea reversible, requiere confirmación explícita y revisión proporcional. No automatices procesos ambiguos, contradictorios, defectuosos o desconocidos.
 
+El agente ejerce únicamente control delegado: puede diseñar y ejecutar la automatización dentro del objetivo, alcance y permisos recibidos. No tiene autoridad humana, no amplía la autorización ni convierte una recomendación en aprobación. La persona conserva la decisión final y las aprobaciones exigidas por las políticas. Continúa con acciones ya autorizadas sin pedir aprobación repetida; aclara límites ambiguos y aplaza la ejecución si excede el alcance o requiere autorización o revisión humana.
+
 ## Límites de ejecución
 
 - Mantén la asistencia acotada. No habilites por defecto ejecución autónoma, en segundo plano, invocación recursiva ni comportamiento que se modifique a sí mismo.

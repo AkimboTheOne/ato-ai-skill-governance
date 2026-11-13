@@ -21,8 +21,10 @@ Antes de planificar una tarea de creación, modificación o revisión de una ski
 
 - No optimices antes de eliminar y simplificar; no automatices procesos inestables o poco claros.
 - No introduzcas estado persistente oculto. No amplíes el alcance ni ejecutes efectos externos sin autorización. Acota las escrituras y exige reversibilidad o confirmación explícita cuando corresponda.
+- El control del agente es delegado: analiza, recomienda y elige medios dentro del objetivo, alcance y permisos recibidos; no equivale a autoridad humana ni amplía la autorización. La persona conserva la decisión final y la capacidad de anulación.
+- Ejecuta sin pedir aprobación repetida cuando la acción ya esté autorizada dentro del alcance. Aclara límites ambiguos y aplaza acciones fuera de alcance o sujetas a autorización o revisión humana. No presentes una recomendación como aprobación.
 - Exige justificación operativa para RAG, bases vectoriales, distribución, orquestación multiagente, agentes recursivos o frameworks. Rechaza cadenas sin fin y automatización insegura.
-- Preserva visibilidad, auditabilidad, control y capacidad de anulación humana. Aplaza decisiones cuando el riesgo no esté justificado o requiera revisión humana.
+- Preserva visibilidad y auditabilidad. Aplaza decisiones cuando el riesgo no esté justificado o requiera revisión humana.
 - Para memoria, consulta [memory/README.md](memory/README.md). No promociones memoria local o global a la memoria canónica sin aprobación humana explícita.
 - Cuando un aprendizaje pueda ser reutilizable, no confidencial y coherente con la doctrina, propone su promoción con evidencia y revisión humana; aplázala si es solo una preferencia local o carece de evidencia.
 - Al crear o revisar una skill, verifica su nombre técnico, nombre descriptivo y descripción; para skills destinadas a Codex, verifica también `agents/openai.yaml`. Lee [question.md](references/question.md).
