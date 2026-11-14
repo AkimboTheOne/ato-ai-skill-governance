@@ -17,9 +17,16 @@ Al crear o revisar una skill, verifica que:
 - `name` de `SKILL.md` identifique la capacidad, cumpla el formato aplicable y coincida con el directorio.
 - El título de `SKILL.md` sea legible, refleje el propósito y sea coherente con el nombre técnico.
 - `description` explique qué hace y cuándo usarla; no sustituye a los nombres.
+- La skill declare en un archivo `VERSION` de su raíz una versión válida conforme a Semantic Versioning 2.0.0. Verifica que la versión corresponda al contenido y a los artefactos de publicación cuando existan; este requisito es agnóstico de plataforma.
 - Para la plataforma objetivo, verifica sus metadatos de interfaz solo cuando sean parte del alcance. En la implementación Codex de este repositorio, `agents/openai.yaml` puede incluir `interface.display_name` e `interface.short_description`, coherentes con el título, la capacidad y la descripción; conserva su política y otros campos existentes. Este archivo es específico de OpenAI, no un requisito portable.
 
 En una revisión informa las ausencias o incoherencias; corrígelas solo dentro del alcance autorizado. Redacta la prosa para su audiencia y conserva en inglés identificadores, nombres de archivos, claves, valores de contrato y términos técnicos cuando su traducción reduzca precisión.
+
+## Validación estructural de skills de Codex
+
+Al validar la estructura básica de una skill de Codex, usa como referencia `quick_validate.py` del skill `skill-creator` cuando esté disponible en el entorno activo. Descubre allí su ubicación; no documentes rutas absolutas ligadas a una cuenta o máquina. Es una herramienta de desarrollo y revisión, no parte del runtime ni de las dependencias de la skill distribuida. Si requiere PyYAML u otra dependencia, mantenla aislada en el entorno de desarrollo del repositorio, fuera del paquete de la skill.
+
+El validador oficial cubre comprobaciones estructurales básicas; no sustituye la verificación de la versión SemVer requerida arriba. Revisa aparte, cuando corresponda, enlaces y referencias, coherencia entre metadatos y contenido, secretos accidentales y convenciones particulares del proyecto. Si el validador no está disponible, informa que no pudo ejecutarse y realiza comprobaciones estáticas razonables; no inventes resultados ni instales software fuera del proyecto. No copies ni mantengas una versión propia del validador ni agregues scripts, servicios o dependencias nuevas salvo que la arquitectura existente lo justifique.
 
 En esta implementación Codex, al crear una skill incluye `agents/openai.yaml` con esos campos y habilita la selección automática por defecto, salvo solicitud explícita de deshabilitarla. Al revisar una skill existente, preserva la política de invocación de la plataforma objetivo; informa faltantes y corrígelos solo si la tarea autoriza cambios. Para otros agentes, no asumas este archivo ni estos campos: usa su mecanismo de descubrimiento si se solicita o está documentado.
 

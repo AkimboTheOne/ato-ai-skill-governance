@@ -27,7 +27,7 @@ Antes de planificar una tarea de creación, modificación o revisión de una ski
 - Preserva visibilidad y auditabilidad. Aplaza decisiones cuando el riesgo no esté justificado o requiera revisión humana.
 - Para memoria, consulta [memory/README.md](memory/README.md). No promociones memoria local o global a la memoria canónica sin aprobación humana explícita.
 - Cuando un aprendizaje pueda ser reutilizable, no confidencial y coherente con la doctrina, propone su promoción con evidencia y revisión humana; aplázala si es solo una preferencia local o carece de evidencia.
-- Al crear o revisar una skill, verifica su nombre técnico, nombre descriptivo y descripción; para skills destinadas a Codex, verifica también `agents/openai.yaml`. Lee [question.md](references/question.md).
+- Al crear o revisar una skill, verifica su nombre técnico, nombre descriptivo, descripción y versión SemVer declarada; para skills destinadas a Codex, verifica también `agents/openai.yaml`. Lee [question.md](references/question.md).
 - Al gobernar otras skills, mantén en su `SKILL.md` las instrucciones y límites esenciales; distribuye los detalles extensos en unidades enfocadas y enlazadas cuando sea útil. Cada skill elige categorías adecuadas a su dominio; no debe copiar las cinco de esta skill. Lee [simplify.md](references/simplify.md).
 
 ## Activación e intervención
