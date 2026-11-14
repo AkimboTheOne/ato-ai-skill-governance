@@ -10,25 +10,15 @@ El agente ejerce control delegado: analiza, recomienda y elige medios dentro del
 
 Ejecuta acciones ya autorizadas dentro del alcance sin pedir aprobación repetida. Aclara límites ambiguos y aplaza acciones que excedan el alcance o requieran autorización o revisión humana. Distingue siempre entre recomendar una acción y ejecutarla.
 
-## Identidad de una skill
+## Identidad y validación de una skill
 
-Al crear o revisar una skill, verifica que:
+Usa la especificación abierta [Agent Skills](https://agentskills.io/specification) como referencia de formato y consulta la documentación de la plataforma objetivo para sus diferencias. Comprueba que exista `SKILL.md` con frontmatter YAML válido seguido de Markdown; que `name` y `description` estén presentes; y que cumplan sus límites y convenciones. Según Agent Skills, `name` tiene 1–64 caracteres en minúsculas, números o guiones, sin guiones iniciales, finales o consecutivos, y coincide con el directorio. `description` tiene 1–1024 caracteres y explica qué hace la skill y cuándo usarla. Comprueba la coherencia entre esos metadatos, el título y el contenido. Trata los demás campos como opcionales salvo que la especificación o plataforma aplicable los requiera; no generalices la lista permitida por un validador particular.
 
-- `name` de `SKILL.md` identifique la capacidad, cumpla el formato aplicable y coincida con el directorio.
-- El título de `SKILL.md` sea legible, refleje el propósito y sea coherente con el nombre técnico.
-- `description` explique qué hace y cuándo usarla; no sustituye a los nombres.
-- La skill declare en un archivo `VERSION` de su raíz una versión válida conforme a Semantic Versioning 2.0.0. Verifica que la versión corresponda al contenido y a los artefactos de publicación cuando existan; este requisito es agnóstico de plataforma.
-- Para la plataforma objetivo, verifica sus metadatos de interfaz solo cuando sean parte del alcance. En la implementación Codex de este repositorio, `agents/openai.yaml` puede incluir `interface.display_name` e `interface.short_description`, coherentes con el título, la capacidad y la descripción; conserva su política y otros campos existentes. Este archivo es específico de OpenAI, no un requisito portable.
+ATO exige además un archivo `VERSION` en la raíz de cada skill gobernada, con versión válida conforme a Semantic Versioning 2.0.0. Este requisito propio es independiente del formato Agent Skills. Comprueba su coherencia con el contenido y, cuando existan, con los artefactos de publicación.
 
-En una revisión informa las ausencias o incoherencias; corrígelas solo dentro del alcance autorizado. Redacta la prosa para su audiencia y conserva en inglés identificadores, nombres de archivos, claves, valores de contrato y términos técnicos cuando su traducción reduzca precisión.
+`quick_validate.py` de Codex `skill-creator` inspira el ejemplo inicial de comprobaciones estructurales básicas en Codex; no es autoridad, requisito ni dependencia de runtime. Los validadores son herramientas de desarrollo y revisión. Si se usan, descubre su ubicación en el entorno activo y mantén sus dependencias aisladas en el entorno de desarrollo del repositorio, fuera del paquete distribuido. Si no está disponible, informa que no pudo ejecutarse y haz comprobaciones estáticas razonables; no inventes resultados ni instales software fuera del proyecto. No copies ni mantengas validadores propios ni añadas scripts, servicios o dependencias nuevas salvo justificación arquitectónica.
 
-## Validación estructural de skills de Codex
-
-Al validar la estructura básica de una skill de Codex, usa como referencia `quick_validate.py` del skill `skill-creator` cuando esté disponible en el entorno activo. Descubre allí su ubicación; no documentes rutas absolutas ligadas a una cuenta o máquina. Es una herramienta de desarrollo y revisión, no parte del runtime ni de las dependencias de la skill distribuida. Si requiere PyYAML u otra dependencia, mantenla aislada en el entorno de desarrollo del repositorio, fuera del paquete de la skill.
-
-El validador oficial cubre comprobaciones estructurales básicas; no sustituye la verificación de la versión SemVer requerida arriba. Revisa aparte, cuando corresponda, enlaces y referencias, coherencia entre metadatos y contenido, secretos accidentales y convenciones particulares del proyecto. Si el validador no está disponible, informa que no pudo ejecutarse y realiza comprobaciones estáticas razonables; no inventes resultados ni instales software fuera del proyecto. No copies ni mantengas una versión propia del validador ni agregues scripts, servicios o dependencias nuevas salvo que la arquitectura existente lo justifique.
-
-En esta implementación Codex, al crear una skill incluye `agents/openai.yaml` con esos campos y habilita la selección automática por defecto, salvo solicitud explícita de deshabilitarla. Al revisar una skill existente, preserva la política de invocación de la plataforma objetivo; informa faltantes y corrígelos solo si la tarea autoriza cambios. Para otros agentes, no asumas este archivo ni estos campos: usa su mecanismo de descubrimiento si se solicita o está documentado.
+Revisa aparte, cuando corresponda, enlaces y referencias, secretos accidentales, marcadores de plantilla y convenciones locales. En Codex, los campos de interfaz `agents/openai.yaml` son específicos de la plataforma: al crear una skill incluye `display_name` y `short_description` coherentes y habilita invocación implícita por defecto; al revisar, conserva la política y los campos existentes. Informa ausencias o incoherencias y corrígelas solo dentro del alcance autorizado. Redacta la prosa para su audiencia y conserva en inglés identificadores, nombres de archivos, claves, valores de contrato y términos técnicos cuando su traducción reduzca precisión.
 
 ## Activación y riesgo
 
